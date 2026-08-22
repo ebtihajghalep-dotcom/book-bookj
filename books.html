@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة المعرفة - الكتب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="books.html">الكتب</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="books-header">
+            <h1>📚 مجموعة الكتب</h1>
+            <p style="color: #666; font-size: 1.1rem;">اكتشف مجموعتنا المختارة من أفضل الكتب</p>
+        </div>
+
+        <div class="books-grid">
+            <div class="book-card">
+                <img src="img/11.jpg" alt="كتاب الأدب العربي" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">الأدب العربي الكلاسيكي</h3>
+                    <p class="book-price">45 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('الأدب العربي الكلاسيكي', 45)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="img/22.jpg" alt="كتاب العلوم" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">مقدمة في العلوم الحديثة</h3>
+                    <p class="book-price">60 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('مقدمة في العلوم الحديثة', 60)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="img/33.jpg" alt="كتاب التاريخ" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">تاريخ الحضارات</h3>
+                    <p class="book-price">55 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('تاريخ الحضارات', 55)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=400&fit=crop" alt="كتاب الفلسفة" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">فلسفة الحياة</h3>
+                    <p class="book-price">40 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('فلسفة الحياة', 40)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=400&fit=crop" alt="كتاب الروايات" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">روايات عالمية مختارة</h3>
+                    <p class="book-price">70 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('روايات عالمية مختارة', 70)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop" alt="كتاب التنمية البشرية" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">فن التفكير الإبداعي</h3>
+                    <p class="book-price">50 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('فن التفكير الإبداعي', 50)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop" alt="كتاب الأطفال" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">قصص للأطفال</h3>
+                    <p class="book-price">35 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('قصص للأطفال', 35)">أضف للسلة</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=300&h=400&fit=crop" alt="كتاب الشعر" class="book-image">
+                <div class="book-info">
+                    <h3 class="book-title">ديوان الشعر العربي</h3>
+                    <p class="book-price">48 ريال</p>
+                    <button class="add-to-cart" onclick="addToCart('ديوان الشعر العربي', 48)">أضف للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h2>🛒 سلة المشتريات</h2>
+            <div id="cart-items" class="cart-items">
+                <p style="color: #999; text-align: center;">السلة فارغة</p>
+            </div>
+            <div class="cart-total">
+                المجموع: <span id="cart-total">0</span> ريال
+            </div>
+            <button class="checkout-btn" onclick="checkout()">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 مكتبة المعرفة - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(bookName, price) {
+            const existingItem = cart.find(item => item.name === bookName);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name: bookName, price: price, quantity: 1 });
+            }
+            
+            updateCartDisplay();
+            alert('تم إضافة "' + bookName + '" إلى السلة');
+        }
+
+        function removeFromCart(bookName) {
+            cart = cart.filter(item => item.name !== bookName);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartTotalSpan = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p style="color: #999; text-align: center;">السلة فارغة</p>';
+                cartTotalSpan.textContent = '0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong><br>
+                            <small>${item.price} ريال × ${item.quantity}</small>
+                        </div>
+                        <div>
+                            <span style="color: #667eea; font-weight: bold;">${itemTotal} ريال</span>
+                            <button onclick="removeFromCart('${item.name}')" style="margin-right: 10px; padding: 5px 10px; background: #ff6b6b; color: white; border: none; border-radius: 5px; cursor: pointer;">حذف</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartItemsDiv.innerHTML = html;
+            cartTotalSpan.textContent = total;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('السلة فارغة! يرجى إضافة كتب أولاً');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert('شكراً لك!\n\nتم استلام طلبك بنجاح.\nالمجموع: ' + total + ' ريال\n\nسنتواصل معك قريباً لإتمام عملية الشراء.');
+            
+            cart = [];
+            updateCartDisplay();
+        }
+    </script>
+</body>
+</html>

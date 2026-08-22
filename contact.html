@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة المعرفة - اتصل بنا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="books.html">الكتب</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="contact-container">
+            <h1>📞 اتصل بنا</h1>
+            <p style="color: #666; font-size: 1.2rem; margin-bottom: 2rem;">نسعد بتواصلكم معنا في أي وقت</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>البريد الإلكتروني:</strong><br>
+                        <a href="mailto:info@almaktaba.com" style="color: #667eea; text-decoration: none;">alaa@almaktaba.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>رقم الهاتف:</strong><br>
+                        <a href="tel:5555555" style="color: #667eea; text-decoration: none;">89888888</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>العنوان:</strong><br>
+                       الاردن<br>
+                        مادبا
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div>
+                        <strong>ساعات العمل:</strong><br>
+                        السبت - الخميس: 9:00 ص - 9:00 م<br>
+                        الجمعة: 2:00 م - 9:00 م
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 style="color: #667eea; margin-bottom: 1.5rem; text-align: center;">أرسل لنا رسالة</h2>
+                <form onsubmit="sendMessage(event)">
+                    <input type="text" placeholder="الاسم الكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="tel" placeholder="رقم الهاتف">
+                    <textarea placeholder="رسالتك..." required></textarea>
+                    <button type="submit">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 مكتبة المعرفة - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+            alert('شكراً لتواصلك معنا!\n\nتم استلام رسالتك بنجاح.\nسنعود إليك في أقرب وقت ممكن.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
